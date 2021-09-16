@@ -1,16 +1,16 @@
 <template>
   <div>
-    <the-header />
+    <TheHeader />
     <router-view />
   </div>
 </template>
 
 <script>
-import { TheHeader } from '@/components/layout/TheHeader'
+import TheHeader from './components/layout/TheHeader.vue'
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
   }
 }
 </script>
