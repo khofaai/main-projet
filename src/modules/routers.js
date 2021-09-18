@@ -1,10 +1,9 @@
-import blueRouters from './blue/router.js'
-import purpleRouters from './purple/router.js'
+const routesFiles = require.context('./', true, /\/.*\/router\.js$/);
+const modulesRoutes = [];
 
-const routerModules = [...blueRouters, ...purpleRouters]
+routesFiles.keys().reduce((_, modulePath) => {
+  const value = routesFiles(modulePath);
+  modulesRoutes.push(...value.default);
+}, {});
 
-console.log({
-  routerModules
-})
-
-export default routerModules
+export default modulesRoutes;
